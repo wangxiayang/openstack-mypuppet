@@ -1,0 +1,4 @@
+# check network connection
+# restart neutron after iptables change
+# sync ntp
+# validate password/...

@@ -8,8 +8,6 @@ class compute::ntp::ntp inherits compute {
 	$config_template = $compute::ntp::params::config_template
 	$service_manage = $compute::ntp::params::service_manage
 	$service_name = $compute::ntp::params::service_name
-	$service_ensure = $compute::ntp::params::service_ensure
-	$service_enable = $compute::ntp::params::service_enable
 
 	anchor { 'compute::ntp::begin': } ->
 		class { 'compute::ntp::install': } ->
