@@ -22,9 +22,9 @@ class neutron (
 	}
 
 	# connect all actions
-	Anchor['neutron::begin'] ->
-		Class['neutron::install'] ->
-		Class['neutron::config'] ->
-		#Class['neutron::service'] ->
-	Anchor['neutron::end']
+	anchor { 'neutron::begin': } ->
+		class { 'neutron::install': } ->
+		class { 'neutron::config': } ->
+		#class {'neutron::service': } ->
+	anchor { 'neutron::end' }
 }
