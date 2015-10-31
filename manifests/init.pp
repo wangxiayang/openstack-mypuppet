@@ -11,10 +11,10 @@ class neutron (
 	include neutron::params
 
 	# some validation operation
-	validate_bool($verbose)
-	validate_bool($package_manage)
-	validate_array($package_name)
-	validate_absolute_path($config_path)
+	#validate_bool($verbose)
+	#validate_bool($package_manage)
+	#validate_array($package_name)
+	#validate_absolute_path($config_path)
 
 	# notifications
 	if $verbose {
