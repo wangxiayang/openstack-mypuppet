@@ -1,9 +1,9 @@
-class neutron::params {
+class compute::params {
 
 	$verbose = true
 	$package_manage = true
-	$package_name = ['openstack-neutron']
-	$config_path = '/etc/neutron/neutron.conf'
+	$controller_hostname = 'controller'
+	$controller_ip = '172.16.100.128'
 
 	# actions for host-specific values, such as ip
 }

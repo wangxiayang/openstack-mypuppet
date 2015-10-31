@@ -1,30 +1,25 @@
-class neutron {
+class compute {
 
-	include neutron::params
+	include compute::params
+
+	# params used by puppet
+	$package_manage = $compute::params::package_manage
 
 	# params in conf file
-	$verbose = $neutron::params::verbose
-	# params used by puppet
-	$package_manage = $neutron::params::package_manage
-	$package_name = $neutron::params::package_name
-	$config_path = $neutron::params::config_path
-	$config_template = 'neutron/neutron.conf.erb'
+	$verbose = $compute::params::verbose
+	$controller_hostname = $compute::params::controller_hostname
+	$controller_ip = $compute::params::controller_ip
 
 	# some validation operation
 	validate_bool($verbose)
 	validate_bool($package_manage)
-	validate_array($package_name)
-	validate_absolute_path($config_path)
 
-	# notifications
-	if $verbose {
-		notice('Verbose has been turned on.')
-	}
+	require compute::ntp::ntp
 
 	# connect all actions
-	anchor { 'neutron::begin': } ->
-		class { 'neutron::install': } ->
-		class { 'neutron::config': } ->
-		#class {'neutron::service': } ->
-	anchor { 'neutron::end': }
+	anchor { 'compute::begin': } ->
+		#class { 'compute::pre-install': } ->
+		class { 'compute::install': } ->
+		class { 'compute::neutron::neutron': } ->
+	anchor { 'compute::end': }
 }
