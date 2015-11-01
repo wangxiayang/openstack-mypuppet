@@ -9,6 +9,7 @@ class compute::nova::service inherits compute::nova::nova {
 		ensure => $service_ensure,
 		enable => $service_enable,
 		require => File[$config_path],
+		subscribe => File[$config_path],
 	}
 
 }

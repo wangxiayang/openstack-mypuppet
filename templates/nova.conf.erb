@@ -1149,8 +1149,7 @@ auth_strategy=keystone
 
 # The full class name of the network API class to use (string
 # value)
-# TODO
-#network_api_class=nova.network.neutronv2.api.API
+network_api_class=nova.network.neutronv2.api.API
 
 
 
@@ -1421,8 +1420,7 @@ linuxnet_interface_driver=nova.network.linux_net.LinuxOVSInterfaceDriver
 #
 
 # The full class name of the security API class (string value)
-# TODO
-#security_group_api=neutron
+security_group_api=neutron
 
 
 #
@@ -1904,8 +1902,7 @@ linuxnet_interface_driver=nova.network.linux_net.LinuxOVSInterfaceDriver
 
 # Firewall driver (defaults to hypervisor specific iptables
 # driver) (string value)
-# TODO
-#firewall_driver=nova.virt.firewall.NoopFirewallDriver
+firewall_driver=nova.virt.firewall.NoopFirewallDriver
 
 # Whether to allow network traffic from same network (boolean
 # value)
@@ -3147,8 +3144,7 @@ admin_tenant_name = service
 
 # URL for connecting to neutron (string value)
 # Deprecated group;name - DEFAULT;neutron_url
-# TODO
-#url=http://<%= @controller_hostname %>:9696
+url=http://<%= @controller_hostname %>:9696
 
 # Timeout value for connecting to neutron in seconds (integer
 # value)
@@ -3162,14 +3158,12 @@ admin_tenant_name = service
 # Username for connecting to neutron in admin context (string
 # value)
 # Deprecated group;name - DEFAULT;neutron_admin_username
-# TODO
-#admin_username=neutron
+admin_username=neutron
 
 # Password for connecting to neutron in admin context (string
 # value)
 # Deprecated group;name - DEFAULT;neutron_admin_password
-# TODO
-#admin_password=<%= @neutron_password %>
+admin_password=<%= @neutron_password %>
 
 # Tenant id for connecting to neutron in admin context (string
 # value)
@@ -3181,8 +3175,7 @@ admin_tenant_name = service
 # Note that with Keystone V3 tenant names are only unique
 # within a domain. (string value)
 # Deprecated group;name - DEFAULT;neutron_admin_tenant_name
-# TODO
-#admin_tenant_name=service
+admin_tenant_name=service
 
 # Region name for connecting to neutron in admin context
 # (string value)
@@ -3192,8 +3185,7 @@ admin_tenant_name = service
 # Authorization URL for connecting to neutron in admin context
 # (string value)
 # Deprecated group;name - DEFAULT;neutron_admin_auth_url
-# TODO
-#admin_auth_url=http://<%= @controller_hostname %>:5000/v2.0
+admin_auth_url=http://<%= @controller_hostname %>:5000/v2.0
 
 # If set, ignore any SSL validation issues (boolean value)
 # Deprecated group;name - DEFAULT;neutron_api_insecure
@@ -3202,8 +3194,7 @@ admin_tenant_name = service
 # Authorization strategy for connecting to neutron in admin
 # context (string value)
 # Deprecated group;name - DEFAULT;neutron_auth_strategy
-# TODO
-#auth_strategy=keystone
+auth_strategy=keystone
 
 # Name of Integration Bridge used by Open vSwitch (string
 # value)
